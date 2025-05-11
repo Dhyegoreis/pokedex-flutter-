@@ -1,0 +1,18 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Regras extras para deixar o código mais limpo e seguro
+    always_specify_types: true         # Sempre especificar o tipo em variáveis
+    avoid_print: true                  # Evita usar print (recomenda usar debugPrint ou logs)
+    prefer_const_constructors: true    # Sempre usar const onde possível (melhora performance)
+    prefer_final_locals: true          # Prefira variáveis finais (imutáveis)
+    sort_constructors_first: true      # Organiza construtores primeiro na classe
+    avoid_unnecessary_containers: true # Evita usar Container sem necessidade
+    unnecessary_this: true             # Evita usar 'this.' quando não precisa
+
+analyzer:
+  errors:
+    always_specify_types: ignore ignore
+  exclude:
+    - "**/*.g.dart"  # Ignora arquivos gerados automaticamente
