@@ -3,10 +3,18 @@ import 'package:pokedex_app/ComparePage.dart';
 import 'package:pokedex_app/Homepage.dart';
 import 'package:pokedex_app/Quiz_page.dart';
 import 'package:pokedex_app/favorite_page.dart';
-
+import 'package:provider/provider.dart';
+import 'package:pokedex_app/controle_api.dart';
 
 void main() {
-  runApp(const PokedexApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => ControleApi()..fetchPokemons()),
+      ],
+      child: const PokedexApp(),
+    ),
+  );
 }
 
 class PokedexApp extends StatelessWidget {
